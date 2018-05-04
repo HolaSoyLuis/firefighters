@@ -10,9 +10,10 @@ class profile_form(forms.ModelForm):
             'telephone',
             'picture',
         )
-        labels = (
-            {'Nombre': 'name'},
-            {'Direccion': 'address'},
-            {'Telefono': 'telephone'},
-            {'Foto': 'picture'},
-        )
+
+        labels = {
+            'name': 'Nombre',
+            'address': 'Direccion',
+            'telephone': 'Telefono',
+            'picture': 'Foto',
+        }

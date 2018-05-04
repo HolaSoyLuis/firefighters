@@ -19,25 +19,18 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
+# serializers
+from rest_framework import routers
+from Rest.viewsets import AlertViewSet
+
+router = routers.DefaultRouter()
+router.register('alert',AlertViewSet)
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('users.urls')),
+    path('rest/', include(router.urls)),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-
-'''
-from django.conf import settings
-from django.urls import path, include
-from django.conf.urls.static import static
-from django.contrib import admin
-
-urlpatterns = [
-    path('', include('users.urls')),
-    path('admin/', admin.site.urls),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-'''

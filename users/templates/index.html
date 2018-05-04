@@ -1,10 +1,77 @@
-<html>
-    <head>
-        <title>Estas en el index</title>
-    </head>
-    <body>
-        <p>
-            Aqui casual dentro del index
-        </p>
-    </body>
-</html>
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+    {% block content %}
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="{% static 'img/maternidad.jpg' %}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="p-5">
+              <h2 class="display-4">Maternidad</h2>
+              <p>
+                La maternidad es uno de los eventos mas recurrentes en el cual se necesita ayuda inmediata, si se encuentra en esta situacion no dude en comunicarse con nosotros.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="{% static 'img/transito.jpg' %}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="p-5">
+              <h2 class="display-4">Transito</h2>
+              <p>Los accidentes de transito pueden suceder en cualquier momento, si usted sufre uno o se encuentra en el medio donde se ha dado el accidente reportenoslo para su pronta asistencia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="{% static 'img/incendio.jpeg' %}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="p-5">
+              <h2 class="display-4">Incendios</h2>
+              <p>La facilidad con la que se propaga un incendio es alarmante, como su dificultad para ser controlado, ante un evento de estos porfavor comuniquese rapidamente con nosotros.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-1">
+            <div class="p-5">
+              <h2 class="display-4">Telefonos</h2>
+              <p>7760 1661</p>
+              <p>7760 5812</p>
+              <p>122</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% endblock %}
