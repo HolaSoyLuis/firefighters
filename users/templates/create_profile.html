@@ -1,12 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'new_base.html' %}
 
 {% block content %}
 <center>
-    <form id='formulario' method='post' enctype='multipart/form-data' action=''>
+    <form class="genric-btn danger-border" id='formulario' method='post' enctype='multipart/form-data' action=''>
         {% csrf_token %}
         {{ formulario.as_p }}
         <p><input type='submit' value='Registrar'/></p>
     </form>
 </center>
-        
+
 {% endblock %}

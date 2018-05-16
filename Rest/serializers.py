@@ -1,8 +1,8 @@
 from rest_framework import serializers
 
-from users.models import alert
+from users.models import Persona
 
 class AlertSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
-		model = alert
-		fields = ('name', 'DPI', 'telephone', 'coord','address', 'alerts')
+		model = Persona
+		fields = ('dpi', 'nombre', 'telefono', 'coordenadas','direccion', 'emergencia')

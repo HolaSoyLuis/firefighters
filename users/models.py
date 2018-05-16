@@ -7,19 +7,19 @@ class profile(models.Model):
     telephone = models.CharField(max_length = 12)
     picture = models.ImageField(upload_to = 'pictures')
     registered_at = models.DateField(auto_now_add = True)
-
+    
     def __str__(self):
         return '%s %s' % (self.name, self.telephone)
 
-class alert(models.Model):
+class Persona(models.Model):
     # person data
-    name = models.CharField(max_length = 100)
-    DPI = models.CharField(max_length = 20)
-    telephone = models.CharField(max_length = 15)
+    dpi = models.CharField(max_length = 20, blank = True)
+    nombre = models.CharField(max_length = 100)
+    telefono = models.CharField(max_length = 15)
     # alert data
-    coord = models.CharField(max_length = 200)
-    address = models.CharField(max_length = 250)
-    alerts = models.CharField(max_length = 50)
+    coordenadas = models.CharField(max_length = 200)
+    direccion = models.CharField(max_length = 250)
+    emergencia = models.CharField(max_length = 50)
 
     def __str__(self):
-        return '%s %s %s' % (self.name, self.DPI, self.telephone)
+        return '%s %s %s' % (self.dpi, self.nombre, self.telefono)

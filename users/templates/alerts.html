@@ -1,0 +1,40 @@
+{% extends 'new_base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+<head>
+    <META HTTP-EQUIV="Refresh" CONTENT="3;URL={% url 'alert' %}">
+</head>
+<div class="section-top-border">
+<h3 class="mb-30">Listado de Alertas</h3>
+<div>
+    <div>
+        <table class="table table-striped table-hover">
+            <tr>
+                <td>DPI</td>
+                <td>Nombre</td>
+                <td>Telefono</td>
+                <td>Coordenadas</td>
+                <td>Direccion</td>
+                <td>Tipo de emergencia</td>
+                <td>Ver en google maps</td>
+            </tr>
+            
+        {% for obj in data %}
+        
+            <tr>
+                <td>{{ obj.dpi }}</td>
+                <td>{{ obj.nombre }}</td>
+                <td>{{ obj.telefono }}</td>
+                <td>{{ obj.coordenadas }}</td>
+                <td>{{ obj.direccion }}</td>
+                <td>{{ obj.emergencia }}</td>
+                <td><a href = "http://maps.google.es/?q={{ obj.coordenadas }}" target="_blank">Ver en google maps</a></td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}

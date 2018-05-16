@@ -1,0 +1,93 @@
+{% extends 'new_base.html' %}
+{% load staticfiles %}
+{% block content %}
+<center>
+    <h2 class="text-uppercase">Emergencias que cubrimos<br></h2>
+</center>
+    <section class="oz-body-wrap">
+        <div class="overlay overlay-bg"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 d-flex align-items-stretch">
+                    <div class="single-feature">
+                        <div class="icon">
+                            <span class="lnr lnr-laptop-phone"></span>
+                        </div>
+                        <div class="desc">
+                            <h4 class="text-uppercase">Maternidad<br></h4>
+                            <p>
+                                <img src="{% static 'img/maternidad.jpg' %}" width="210px" height="140px">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 d-flex align-items-stretch">
+                    <div class="single-feature">
+                        <div class="icon">
+                            <span class="lnr lnr-graduation-hat"></span>
+                        </div>
+                        <div class="desc">
+                            <h4 class="text-uppercase">Accidentes de transito</h4>
+                            <p>
+                                <img src="{% static 'img/transito.jpg' %}" width="210px" height="140px">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 d-flex align-items-stretch">
+                    <div class="single-feature">
+                        <div class="icon">
+                            <span class="lnr lnr-phone"></span>
+                        </div>
+                        <div class="desc">
+                            <h4 class="text-uppercase">Incendios</h4>
+                            <p>
+                                <img src="{% static 'img/incendio.jpeg' %}" width="210px" height="140px">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 d-flex align-items-stretch">
+                    <div class="single-feature">
+                        <div class="icon">
+                            <span class="lnr lnr-laptop"></span>
+                        </div>
+                        <div class="desc">
+                            <h4 class="text-uppercase">Dolores de Cabeza</h4>
+                            <p>
+                                <img src="{% static 'img/cabeza.jpg' %}" width="210px" height="140px">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 d-flex align-items-stretch">
+                    <div class="single-feature">
+                        <div class="icon">
+                            <span class="lnr lnr-heart"></span>
+                        </div>
+                        <div class="desc">
+                            <h4 class="text-uppercase">Molestias estomacales</h4>
+                            <p>
+                                <img src="{% static 'img/abdominal.jpeg' %}" width="210px" height="140px">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 d-flex align-items-stretch">
+                    <div class="single-feature">
+                        <div class="icon">
+                            <span class="lnr lnr-screen"></span>
+                        </div>
+                        <div class="desc">
+                            <h4 class="text-uppercase">Intervenciones quirurgicas</h4>
+                            <p>
+                                <img src="{% static 'img/intervencion.jpg' %}" width="210px" height="140px">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

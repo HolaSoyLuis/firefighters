@@ -1,0 +1,38 @@
+{% extends 'new_base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+    
+<div class="section-top-border">
+<h3 class="mb-30">Lista de personal</h3>
+<div>
+    <div>
+        <table class="table table-striped table-hover">
+            <tr>
+                <td>Nombre</td>
+                <td>Direccion</td>
+                <td>Telefono</td>
+                <td>Fecha de registro</td>
+                <td>Foto</td>
+            </tr>
+            
+        {% for obj in profile_list %}
+        
+            <tr>
+                <td>{{ obj.name }}</td>
+                <td>{{ obj.address }}</td>
+                <td>{{ obj.telephone }}</td>
+                <td>{{ obj.registered_at }}</td>
+                <td> <img src="{{ MEDIA_URL }}{{ obj.picture }}" width="200px" height="150px" /> </td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+
+    <center>
+  <a class="genric-btn danger-border" href="{% url 'create_profile' %}">Ingresar nuevo perfil</a>      
+    </center>
+    
+{% endblock %}
