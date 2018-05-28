@@ -5,4 +5,4 @@ from users.models import Persona
 class AlertSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
 		model = Persona
-		fields = ('dpi', 'nombre', 'telefono', 'coordenadas','direccion', 'emergencia')
+		fields = ('nombre', 'telefono', 'coordenadas','direccion', 'emergencia')

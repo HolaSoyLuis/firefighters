@@ -25,7 +25,8 @@ SECRET_KEY = 'qgex(!xne&(_kpo*9)538d6z+zg@ofovggzlaw@cty-%6#hh_c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['bomberosSanPedro.pythonanywhere.com']
+ALLOWED_HOSTS = ['192.168.0.107']
 
 
 # Application definition
@@ -113,15 +114,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-gt'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Guatemala'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

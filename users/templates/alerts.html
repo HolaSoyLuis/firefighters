@@ -12,24 +12,26 @@
     <div>
         <table class="table table-striped table-hover">
             <tr>
-                <td>DPI</td>
                 <td>Nombre</td>
                 <td>Telefono</td>
                 <td>Coordenadas</td>
                 <td>Direccion</td>
                 <td>Tipo de emergencia</td>
+                <td>Fecha</td>
+                <td>Hora</td>
                 <td>Ver en google maps</td>
             </tr>
-            
+
         {% for obj in data %}
-        
+
             <tr>
-                <td>{{ obj.dpi }}</td>
                 <td>{{ obj.nombre }}</td>
                 <td>{{ obj.telefono }}</td>
                 <td>{{ obj.coordenadas }}</td>
                 <td>{{ obj.direccion }}</td>
                 <td>{{ obj.emergencia }}</td>
+                <td>{{ obj.date }}</td>
+                <td>{{ obj.time }}</td>
                 <td><a href = "http://maps.google.es/?q={{ obj.coordenadas }}" target="_blank">Ver en google maps</a></td>
             </tr>
         {% endfor %}
