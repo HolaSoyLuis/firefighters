@@ -5,6 +5,7 @@ from .forms import profile_form
 from django.views.generic import CreateView, ListView, FormView
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
+from django.utils import timezone
 
 def main_page(request):
     return render(request, 'new_index.html')
@@ -46,8 +47,10 @@ class LoginView(FormView):
         return super(LoginView, self).form_valid(form)
 
 def alerts_list(request):
-    data = Persona.objects.all()
+    data = Persona.objects.filter(date__range=[timezone.now(), timezone.now()])
+
     return render(request, 'alerts.html', {'data':data})
+
 
 def bomberos_list(request):
     profile_list = profile.objects.all()

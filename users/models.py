@@ -23,6 +23,10 @@ class Persona(models.Model):
     emergencia = models.CharField(max_length = 50)
     date = models.DateField(default=timezone.now)
     time = models.TimeField(default=timezone.now)
+    Atendido = models.BooleanField(default=False,blank=True)
+
+
+
 
     def __str__(self):
         return '%s %s' % (self.nombre, self.telefono)

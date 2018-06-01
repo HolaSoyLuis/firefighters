@@ -26,7 +26,7 @@ SECRET_KEY = 'qgex(!xne&(_kpo*9)538d6z+zg@ofovggzlaw@cty-%6#hh_c'
 DEBUG = True
 
 #ALLOWED_HOSTS = ['bomberosSanPedro.pythonanywhere.com']
-ALLOWED_HOSTS = ['192.168.0.107']
+ALLOWED_HOSTS = ['192.168.0.101']
 
 
 # Application definition
