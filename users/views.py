@@ -11,10 +11,9 @@ from django.conf import settings
 from io import BytesIO
 from reportlab.pdfgen import canvas
 from django.views.generic import View
-
+from django.contrib.auth.decorators import login_required
 
 class ReportePersonasPDF(View):
-
     def cabecera(self,pdf):
         #Utilizamos el archivo logo_django.png que está guardado en la carpeta media/imagenes
         archivo_imagen = settings.MEDIA_ROOT+'/imagenes/logo.png'
@@ -96,6 +95,7 @@ class ReportePersonasPDF(View):
 def main_page(request):
     return render(request, 'new_index.html')
 
+@login_required
 def create_profile(request):
     if request.method == 'POST':
         formulario = profile_form(request.POST, request.FILES)
@@ -105,6 +105,7 @@ def create_profile(request):
     else:
         formulario = profile_form()
     return render(request, 'create_profile.html', {'formulario': formulario})
+
 
 def profile_list(request):
     profile_list = profile.objects.all()
@@ -132,9 +133,9 @@ class LoginView(FormView):
         login(self.request, form.get_user())
         return super(LoginView, self).form_valid(form)
 
+@login_required
 def alerts_list(request):
     data = Persona.objects.filter(date__range=[timezone.now(), timezone.now()])
-
     return render(request, 'alerts.html', {'data':data})
 
 
@@ -155,18 +156,22 @@ class es_atendido(View):
         todo.save()
         return redirect('alert')
 
+@login_required
 def alerts_list_first_aid(request):
     data = Persona.objects.filter(emergencia = 'Primeros Auxilios')
     return render(request, 'alerts_by_first_aid.html', {'data':data})
 
+@login_required
 def alerts_list_fire(request):
     data = Persona.objects.filter(emergencia = 'Incendio')
     return render(request, 'alerts_by_fire.html', {'data':data})
 
+@login_required
 def alerts_list_maternity(request):
     data = Persona.objects.filter(emergencia = 'Maternidad')
     return render(request, 'alerts_by_maternity.html', {'data':data})
 
+@login_required
 def alerts_list_transit(request):
     data = Persona.objects.filter(emergencia = 'Transito')
     return render(request, 'alerts_by_transit.html', {'data':data})

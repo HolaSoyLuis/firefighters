@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'qgex(!xne&(_kpo*9)538d6z+zg@ofovggzlaw@cty-%6#hh_c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 #ALLOWED_HOSTS = ['bomberosSanPedro.pythonanywhere.com']
 ALLOWED_HOSTS = ['192.168.0.101']
@@ -55,7 +55,7 @@ MIDDLEWARE = [
 
 MANAGERS = (
     ('Luis Velasquez', 'luis95velasquez@outlook.com'),
-    # ('Werner Gonzales', 'wgonzales@gmail.com'),
+    #('Werner Gonzales', 'wgonzales@gmail.com'),
 )
 
 ROOT_URLCONF = 'firefighters.urls'
