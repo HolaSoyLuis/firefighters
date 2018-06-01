@@ -45,6 +45,7 @@
 								{% if user.is_authenticated == True %}
 								<a href="{% url 'profile_list' %}">Personal</a>
 								<a href="alert">Alertas</a>
+								<a href="{% url 'reporte_personas_pdf' %}">Reportes</a>
 								<a href="{% url 'logout' %}?next={% url 'main' %}">Logout</a>
 								{% elif user.is_authenticated == False %}
 								<a href="{% url 'bomberos_list' %}">Conoce el cuerpo de bomberos</a>

@@ -4,20 +4,18 @@
 
 {% block content %}
 <head>
-<table class="table table-striped table-hover">
-        <tr>
-          <td><a href="{% url 'incendio' %}">Lista de Incencios</a></td>
-          <td><a href="{% url 'transito' %}">Lista de accidentes de transito</a></td>
-          <td><a href="{% url 'primeros_auxilios' %}">Lista de emergencias de primeros auxilios</a></td>
-          <td><a href="{% url 'maternidad' %}">Lista de emergencias de maternidad</a></td>
-          <td><a href="{% url 'alert' %}">Lista general de emergencias</a></td>
-        </tr>
-      </table>
-      
-        <META HTTP-EQUIV="Refresh" CONTENT="5">
-</head>
+        <table class="table table-striped table-hover">
+            <tr>
+              <td><a href="{% url 'incendio' %}">Lista de Incencios</a></td>
+              <td><a href="{% url 'transito' %}">Lista de accidentes de transito</a></td>
+              <td><a href="{% url 'primeros_auxilios' %}">Lista de emergencias de primeros auxilios</a></td>
+              <td><a href="{% url 'maternidad' %}">Lista de emergencias de maternidad</a></td>
+              <td><a href="{% url 'alert' %}">Lista general de emergencias</a></td>
+            </tr>
+          </table>
+    </head>
 <div class="section-top-border">
-<h3 class="mb-30">Listado de Alertas</h3>
+<h3 class="mb-30">Listado de alertas de maternidad</h3>
 <div>
     <div>
         <table class="table table-striped table-hover">
@@ -29,13 +27,11 @@
                 <td>Tipo de emergencia</td>
                 <td>Fecha</td>
                 <td>Hora</td>
-                <td>Estado</td>
                 <td>Ver en google maps</td>
-                <td>Esta atendido?</td>
             </tr>
 
-
         {% for obj in data %}
+
             <tr>
                 <td>{{ obj.nombre }}</td>
                 <td>{{ obj.telefono }}</td>
@@ -44,17 +40,9 @@
                 <td>{{ obj.emergencia }}</td>
                 <td>{{ obj.date }}</td>
                 <td>{{ obj.time }}</td>
-                {% if obj.Atendido == True %}
-                    <td>Atendido</td>
-                {% elif obj.Atendido == False %}
-                    <td>No Atendido</td>
-                {% endif %}
                 <td><a href = "http://maps.google.es/?q={{ obj.coordenadas }}" target="_blank">Ver en google maps</a></td>
-                <td><a href = "{% url 'atendido' obj.id %}" >Marcar como Atendido</a></td>
             </tr>
         {% endfor %}
-
-
         </table>
     </div>
 </div>
